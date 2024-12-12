@@ -1,4 +1,4 @@
-namespace Tyuiu.GurzanVM.Sprint6.Task1.V3
+namespace Tyuiu.GurzanVM.Sprint6.Task3.V3
 {
     internal static class Program
     {

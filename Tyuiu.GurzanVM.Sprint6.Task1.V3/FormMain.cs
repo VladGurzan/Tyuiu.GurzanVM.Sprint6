@@ -2,9 +2,9 @@ using Tyuiu.GurzanVM.Sprint6.Task1.V3.Lib;
 
 namespace Tyuiu.GurzanVM.Sprint6.Task1.V3
 {
-    public partial class Form1 : Form
+    public partial class FormMain : Form
     {
-        public Form1()
+        public FormMain()
         {
             InitializeComponent();
         }

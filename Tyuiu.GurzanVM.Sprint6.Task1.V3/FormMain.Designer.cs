@@ -1,6 +1,6 @@
 ﻿namespace Tyuiu.GurzanVM.Sprint6.Task1.V3
 {
-    partial class Form1
+    partial class FormMain
     {
         /// <summary>
         ///  Required designer variable.
@@ -176,7 +176,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(808, 450);
             Controls.Add(groupConc_GVM);
             Controls.Add(buttonSP_GVM);
             Controls.Add(buttonEx_GVM);
