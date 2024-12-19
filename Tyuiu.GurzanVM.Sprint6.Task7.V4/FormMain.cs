@@ -90,7 +90,7 @@ namespace Tyuiu.GurzanVM.Sprint6.Task7.V4
                 dataGridViewNotEnter_GVM.Columns[i].Width = 25;
             }
         }
-
+         
         private void buttonDone_GVM_Click(object sender, EventArgs e)
         {
             int[,] array = new int[rows, cols];
