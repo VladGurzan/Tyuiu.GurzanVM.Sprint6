@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             groupBoxUs_GVM = new GroupBox();
             textBoxUS_GVM = new TextBox();
             groupBoxVv_GVM = new GroupBox();
@@ -38,13 +41,15 @@
             buttonSp_GVM = new Button();
             buttonDone_GVM = new Button();
             groupBoxVi_GVM = new GroupBox();
+            chartRes_GVM = new System.Windows.Forms.DataVisualization.Charting.Chart();
             dataGridView_GVM = new DataGridView();
-            textBoxVi_GVM = new TextBox();
             Column_GVM = new DataGridViewTextBoxColumn();
             Column2_GVM = new DataGridViewTextBoxColumn();
+            textBoxVi_GVM = new TextBox();
             groupBoxUs_GVM.SuspendLayout();
             groupBoxVv_GVM.SuspendLayout();
             groupBoxVi_GVM.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)chartRes_GVM).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView_GVM).BeginInit();
             SuspendLayout();
             // 
@@ -136,17 +141,39 @@
             buttonDone_GVM.TabIndex = 3;
             buttonDone_GVM.Text = "Выполнить";
             buttonDone_GVM.UseVisualStyleBackColor = false;
+            buttonDone_GVM.Click += buttonDone_GVM_Click;
+            buttonDone_GVM.MouseDown += buttonDone_GVM_MouseDown;
+            buttonDone_GVM.MouseEnter += buttonDone_GVM_MouseEnter;
+            buttonDone_GVM.MouseLeave += buttonDone_GVM_MouseLeave;
             // 
             // groupBoxVi_GVM
             // 
+            groupBoxVi_GVM.Controls.Add(chartRes_GVM);
             groupBoxVi_GVM.Controls.Add(dataGridView_GVM);
             groupBoxVi_GVM.Controls.Add(textBoxVi_GVM);
             groupBoxVi_GVM.Location = new Point(686, 12);
             groupBoxVi_GVM.Name = "groupBoxVi_GVM";
-            groupBoxVi_GVM.Size = new Size(539, 407);
+            groupBoxVi_GVM.Size = new Size(629, 407);
             groupBoxVi_GVM.TabIndex = 4;
             groupBoxVi_GVM.TabStop = false;
             groupBoxVi_GVM.Text = "Вывод данных";
+            // 
+            // chartRes_GVM
+            // 
+            chartArea1.Name = "ChartArea1";
+            chartRes_GVM.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            chartRes_GVM.Legends.Add(legend1);
+            chartRes_GVM.Location = new Point(213, 0);
+            chartRes_GVM.Name = "chartRes_GVM";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            chartRes_GVM.Series.Add(series1);
+            chartRes_GVM.Size = new Size(511, 407);
+            chartRes_GVM.TabIndex = 2;
+            chartRes_GVM.Text = "chart1";
             // 
             // dataGridView_GVM
             // 
@@ -155,8 +182,25 @@
             dataGridView_GVM.Location = new Point(0, 49);
             dataGridView_GVM.Name = "dataGridView_GVM";
             dataGridView_GVM.RowHeadersVisible = false;
+            dataGridView_GVM.RowHeadersWidth = 51;
             dataGridView_GVM.Size = new Size(207, 352);
             dataGridView_GVM.TabIndex = 1;
+            // 
+            // Column_GVM
+            // 
+            Column_GVM.HeaderText = "X";
+            Column_GVM.MinimumWidth = 6;
+            Column_GVM.Name = "Column_GVM";
+            Column_GVM.ReadOnly = true;
+            Column_GVM.Width = 80;
+            // 
+            // Column2_GVM
+            // 
+            Column2_GVM.HeaderText = "F(x)";
+            Column2_GVM.MinimumWidth = 6;
+            Column2_GVM.Name = "Column2_GVM";
+            Column2_GVM.ReadOnly = true;
+            Column2_GVM.Width = 80;
             // 
             // textBoxVi_GVM
             // 
@@ -168,25 +212,11 @@
             textBoxVi_GVM.TabIndex = 0;
             textBoxVi_GVM.Text = "Результат:";
             // 
-            // Column_GVM
-            // 
-            Column_GVM.HeaderText = "X";
-            Column_GVM.Name = "Column_GVM";
-            Column_GVM.ReadOnly = true;
-            Column_GVM.Width = 80;
-            // 
-            // Column2_GVM
-            // 
-            Column2_GVM.HeaderText = "F(x)";
-            Column2_GVM.Name = "Column2_GVM";
-            Column2_GVM.ReadOnly = true;
-            Column2_GVM.Width = 80;
-            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1224, 426);
+            ClientSize = new Size(1327, 426);
             Controls.Add(groupBoxVi_GVM);
             Controls.Add(buttonDone_GVM);
             Controls.Add(buttonSp_GVM);
@@ -200,6 +230,7 @@
             groupBoxVv_GVM.PerformLayout();
             groupBoxVi_GVM.ResumeLayout(false);
             groupBoxVi_GVM.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)chartRes_GVM).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView_GVM).EndInit();
             ResumeLayout(false);
         }
@@ -220,5 +251,6 @@
         private TextBox textBoxVi_GVM;
         private DataGridViewTextBoxColumn Column_GVM;
         private DataGridViewTextBoxColumn Column2_GVM;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartRes_GVM;
     }
 }

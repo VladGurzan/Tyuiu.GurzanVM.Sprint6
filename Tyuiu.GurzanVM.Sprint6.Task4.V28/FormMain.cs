@@ -1,3 +1,4 @@
+using System.Xml.Schema;
 using Tyuiu.GurzanVM.Sprint6.Task4.V28.Lib;
 
 namespace Tyuiu.GurzanVM.Sprint6.Task4.V28
@@ -23,6 +24,19 @@ namespace Tyuiu.GurzanVM.Sprint6.Task4.V28
                 double[] valueArray = new double[len];
 
                 valueArray = ds.GetMassFunction(startValue, stopValue);
+
+                this.chartSin_GVM.ChartAreas[0].AxisX.Title = "Îñü X";
+                this.chartSin_GVM.ChartAreas[0].AxisX.Title = "Îcü Y";
+
+                textBoxRes_GVM.Text = "";
+
+                chartSin_GVM.Series[0].Points.Clear();
+                for (int i = 0; i <= len - 1; i++)
+                {
+                    this.chartSin_GVM.Series[0].Points.AddXY(startValue, valueArray[i]);
+                    textBoxRes_GVM.AppendText(valueArray[i] + Environment.NewLine);
+                    startValue++;
+                }
 
 
             }

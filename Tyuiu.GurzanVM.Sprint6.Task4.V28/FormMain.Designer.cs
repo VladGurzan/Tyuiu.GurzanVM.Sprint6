@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             groupBoxUs_GVM = new GroupBox();
             groupBoxVv_GVM = new GroupBox();
             buttonMy_GVM = new Button();
@@ -39,8 +43,10 @@
             textBoxV_GVM = new TextBox();
             groupBox_Res_GVM = new GroupBox();
             textBoxRes_GVM = new TextBox();
+            chartSin_GVM = new System.Windows.Forms.DataVisualization.Charting.Chart();
             groupBoxVv_GVM.SuspendLayout();
             groupBox_Res_GVM.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)chartSin_GVM).BeginInit();
             SuspendLayout();
             // 
             // groupBoxUs_GVM
@@ -154,11 +160,30 @@
             textBoxRes_GVM.Size = new Size(352, 369);
             textBoxRes_GVM.TabIndex = 0;
             // 
+            // chartSin_GVM
+            // 
+            chartArea2.Name = "ChartArea1";
+            chartSin_GVM.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            chartSin_GVM.Legends.Add(legend2);
+            chartSin_GVM.Location = new Point(382, 130);
+            chartSin_GVM.Name = "chartSin_GVM";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            chartSin_GVM.Series.Add(series2);
+            chartSin_GVM.Size = new Size(914, 401);
+            chartSin_GVM.TabIndex = 3;
+            chartSin_GVM.Text = "chart1";
+            title2.Name = "TitleSin";
+            chartSin_GVM.Titles.Add(title2);
+            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1308, 543);
+            Controls.Add(chartSin_GVM);
             Controls.Add(groupBox_Res_GVM);
             Controls.Add(groupBoxVv_GVM);
             Controls.Add(groupBoxUs_GVM);
@@ -168,6 +193,7 @@
             groupBoxVv_GVM.PerformLayout();
             groupBox_Res_GVM.ResumeLayout(false);
             groupBox_Res_GVM.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)chartSin_GVM).EndInit();
             ResumeLayout(false);
         }
 
@@ -184,5 +210,6 @@
         private Button buttonSave_GVM;
         private GroupBox groupBox_Res_GVM;
         private TextBox textBoxRes_GVM;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartSin_GVM;
     }
 }

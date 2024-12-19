@@ -151,6 +151,7 @@
             ButtonDone_GVM.TabIndex = 1;
             ButtonDone_GVM.Text = "Выполнить";
             ButtonDone_GVM.UseVisualStyleBackColor = true;
+            ButtonDone_GVM.Click += ButtonDone_GVM_Click_1;
             // 
             // ButtonHelp_VGM
             // 

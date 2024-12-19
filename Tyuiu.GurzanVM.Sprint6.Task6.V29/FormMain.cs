@@ -19,15 +19,7 @@ namespace Tyuiu.GurzanVM.Sprint6.Task6.V29
             InitializeComponent();
         }
 
-        private void buttonOpen_GVM_Click(object sender, EventArgs e)
-        {
-            openFileDialogTask_GVM.ShowDialog();
-            path = openFileDialogTask_GVM.FileName;
-            textBoxV_GVM.Text = File.ReadAllText(path);
-            groupBoxV_GVM.Text = groupBoxV_GVM.Text + " " + path;
-            buttonDone_GVM.Enabled = true;
-        }
-
+       
         private void buttonDone_GVM_Click(object sender, EventArgs e)
         {
             textBoxRes_GVM.Text = ds.CollectTextFromFile(path);
@@ -43,5 +35,16 @@ namespace Tyuiu.GurzanVM.Sprint6.Task6.V29
         {
 
         }
+
+        private void buttonOpen_GVM_Click_1(object sender, EventArgs e)
+        {
+            openFileDialogTask_GVM.ShowDialog();
+            path = openFileDialogTask_GVM.FileName;
+            textBoxV_GVM.Text = File.ReadAllText(path);
+            groupBoxV_GVM.Text = groupBoxV_GVM.Text + " " + path;
+            buttonDone_GVM.Enabled = true;
+        }
     }
 }
+
+

@@ -21,10 +21,5 @@ namespace Tyuiu.GurzanVM.Sprint6.Task6.V29
         {
             this.Close();
         }
-
-        private void FormAbout_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

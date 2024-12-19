@@ -28,15 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             groupBoxUs_GVM = new GroupBox();
             textBox1 = new TextBox();
             groupBoxEnter_GVM = new GroupBox();
-            textBox2 = new TextBox();
+            dataGridView_GVM = new DataGridView();
             buttonDone_GVM = new Button();
             buttonOpen_GVM = new Button();
             buttonMy_GVM = new Button();
+            chartRes_GVM = new System.Windows.Forms.DataVisualization.Charting.Chart();
             groupBoxUs_GVM.SuspendLayout();
             groupBoxEnter_GVM.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView_GVM).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)chartRes_GVM).BeginInit();
             SuspendLayout();
             // 
             // groupBoxUs_GVM
@@ -62,7 +68,7 @@
             // 
             // groupBoxEnter_GVM
             // 
-            groupBoxEnter_GVM.Controls.Add(textBox2);
+            groupBoxEnter_GVM.Controls.Add(dataGridView_GVM);
             groupBoxEnter_GVM.Location = new Point(12, 143);
             groupBoxEnter_GVM.Name = "groupBoxEnter_GVM";
             groupBoxEnter_GVM.Size = new Size(296, 393);
@@ -70,14 +76,15 @@
             groupBoxEnter_GVM.TabStop = false;
             groupBoxEnter_GVM.Text = "Ввод данных";
             // 
-            // textBox2
+            // dataGridView_GVM
             // 
-            textBox2.BackColor = SystemColors.ControlDark;
-            textBox2.Location = new Point(6, 26);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(284, 361);
-            textBox2.TabIndex = 2;
+            dataGridView_GVM.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView_GVM.Location = new Point(0, 26);
+            dataGridView_GVM.Name = "dataGridView_GVM";
+            dataGridView_GVM.RowHeadersVisible = false;
+            dataGridView_GVM.RowHeadersWidth = 51;
+            dataGridView_GVM.Size = new Size(290, 361);
+            dataGridView_GVM.TabIndex = 5;
             // 
             // buttonDone_GVM
             // 
@@ -112,11 +119,28 @@
             buttonMy_GVM.UseVisualStyleBackColor = false;
             buttonMy_GVM.Click += buttonMy_GVM_Click;
             // 
+            // chartRes_GVM
+            // 
+            chartArea1.Name = "ChartArea1";
+            chartRes_GVM.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            chartRes_GVM.Legends.Add(legend1);
+            chartRes_GVM.Location = new Point(314, 143);
+            chartRes_GVM.Name = "chartRes_GVM";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            chartRes_GVM.Series.Add(series1);
+            chartRes_GVM.Size = new Size(867, 393);
+            chartRes_GVM.TabIndex = 5;
+            chartRes_GVM.Text = "chart1";
+            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1193, 548);
+            Controls.Add(chartRes_GVM);
             Controls.Add(buttonMy_GVM);
             Controls.Add(buttonOpen_GVM);
             Controls.Add(buttonDone_GVM);
@@ -128,7 +152,8 @@
             groupBoxUs_GVM.ResumeLayout(false);
             groupBoxUs_GVM.PerformLayout();
             groupBoxEnter_GVM.ResumeLayout(false);
-            groupBoxEnter_GVM.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView_GVM).EndInit();
+            ((System.ComponentModel.ISupportInitialize)chartRes_GVM).EndInit();
             ResumeLayout(false);
         }
 
@@ -137,9 +162,10 @@
         private GroupBox groupBoxUs_GVM;
         private TextBox textBox1;
         private GroupBox groupBoxEnter_GVM;
-        private TextBox textBox2;
         private Button buttonDone_GVM;
         private Button buttonOpen_GVM;
         private Button buttonMy_GVM;
+        private DataGridView dataGridView_GVM;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartRes_GVM;
     }
 }

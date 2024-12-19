@@ -36,11 +36,12 @@
             textBoxV_GVM = new TextBox();
             groupBoxVi_GVM = new GroupBox();
             textBoxRes_GVM = new TextBox();
-            buttonOpen_GVM = new Button();
             buttonDone_GVM = new Button();
             buttonSp_GVM = new Button();
             openFileDialogTask_GVM = new OpenFileDialog();
             toolTip_GVM = new ToolTip(components);
+            buttonOpen_GVM = new Button();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             groupBoxUs_GVM.SuspendLayout();
             groupBoxV_GVM.SuspendLayout();
             groupBoxVi_GVM.SuspendLayout();
@@ -105,19 +106,6 @@
             textBoxRes_GVM.Size = new Size(597, 282);
             textBoxRes_GVM.TabIndex = 0;
             // 
-            // buttonOpen_GVM
-            // 
-            buttonOpen_GVM.BackColor = Color.Yellow;
-            buttonOpen_GVM.FlatStyle = FlatStyle.System;
-            buttonOpen_GVM.Location = new Point(12, 4);
-            buttonOpen_GVM.Name = "buttonOpen_GVM";
-            buttonOpen_GVM.Size = new Size(115, 78);
-            buttonOpen_GVM.TabIndex = 3;
-            buttonOpen_GVM.Text = "Выбрать";
-            toolTip_GVM.SetToolTip(buttonOpen_GVM, "Открыть файл\r\nВыберите нужный файл для обработки.\r\n\r\n\r\n");
-            buttonOpen_GVM.UseVisualStyleBackColor = false;
-            buttonOpen_GVM.Click += buttonOpen_GVM_Click;
-            // 
             // buttonDone_GVM
             // 
             buttonDone_GVM.BackColor = Color.Green;
@@ -126,6 +114,7 @@
             buttonDone_GVM.Size = new Size(115, 78);
             buttonDone_GVM.TabIndex = 4;
             buttonDone_GVM.Text = "Выполнить";
+            toolTip_GVM.SetToolTip(buttonDone_GVM, "Нажмите для выполнения программы\r\n");
             buttonDone_GVM.UseVisualStyleBackColor = false;
             buttonDone_GVM.Click += buttonDone_GVM_Click;
             // 
@@ -137,6 +126,7 @@
             buttonSp_GVM.Size = new Size(115, 78);
             buttonSp_GVM.TabIndex = 5;
             buttonSp_GVM.Text = "Справка";
+            toolTip_GVM.SetToolTip(buttonSp_GVM, "Информация о создателе приложения");
             buttonSp_GVM.UseVisualStyleBackColor = false;
             buttonSp_GVM.Click += buttonSp_GVM_Click;
             // 
@@ -149,19 +139,34 @@
             toolTip_GVM.ToolTipIcon = ToolTipIcon.Info;
             toolTip_GVM.ToolTipTitle = "Подсказка";
             // 
+            // buttonOpen_GVM
+            // 
+            buttonOpen_GVM.BackColor = Color.Yellow;
+            buttonOpen_GVM.Location = new Point(18, 4);
+            buttonOpen_GVM.Name = "buttonOpen_GVM";
+            buttonOpen_GVM.Size = new Size(115, 78);
+            buttonOpen_GVM.TabIndex = 6;
+            buttonOpen_GVM.Text = "Выбрать";
+            toolTip_GVM.SetToolTip(buttonOpen_GVM, "Нажмите для выбора файла, который хотите открыть\r\n");
+            buttonOpen_GVM.UseVisualStyleBackColor = false;
+            buttonOpen_GVM.Click += buttonOpen_GVM_Click_1;
+            // 
             // FormMain
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.None;
+            BackColor = SystemColors.Control;
             ClientSize = new Size(1282, 543);
+            Controls.Add(buttonOpen_GVM);
             Controls.Add(buttonSp_GVM);
             Controls.Add(buttonDone_GVM);
-            Controls.Add(buttonOpen_GVM);
             Controls.Add(groupBoxVi_GVM);
             Controls.Add(groupBoxV_GVM);
             Controls.Add(groupBoxUs_GVM);
+            Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            FormBorderStyle = FormBorderStyle.Fixed3D;
             Name = "FormMain";
-            Text = "Form1";
+            RightToLeft = RightToLeft.No;
+            Text = "Спринт 6 | Такс 6 | Вариант 29 | Гурзан В.М";
             Load += FormMain_Load;
             groupBoxUs_GVM.ResumeLayout(false);
             groupBoxUs_GVM.PerformLayout();
@@ -180,10 +185,11 @@
         private TextBox textBoxV_GVM;
         private GroupBox groupBoxVi_GVM;
         private TextBox textBoxRes_GVM;
-        private Button buttonOpen_GVM;
         private Button buttonDone_GVM;
         private Button buttonSp_GVM;
         private OpenFileDialog openFileDialogTask_GVM;
         private ToolTip toolTip_GVM;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private Button buttonOpen_GVM;
     }
 }

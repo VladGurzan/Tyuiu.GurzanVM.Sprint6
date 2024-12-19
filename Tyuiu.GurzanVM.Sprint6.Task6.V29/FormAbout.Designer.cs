@@ -75,11 +75,10 @@
             Controls.Add(buttonOk_GVM);
             Controls.Add(textBox_GVM);
             Controls.Add(pictureBox_GVM);
+            FormBorderStyle = FormBorderStyle.Fixed3D;
             Name = "FormAbout";
-            ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "О программе";
-            Load += FormAbout_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox_GVM).EndInit();
             ResumeLayout(false);
             PerformLayout();

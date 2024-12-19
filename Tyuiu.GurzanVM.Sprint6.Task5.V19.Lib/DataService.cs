@@ -10,9 +10,9 @@ namespace Tyuiu.GurzanVM.Sprint6.Task5.V19.Lib
 {
     public class DataService : ISprint6Task5V19
     {
+        public int len = 0;
         public double[] LoadFromDataFile(string path)
         {
-            int len = 0;
             using (StreamReader reader = new StreamReader(path))
             {
                 string line;
